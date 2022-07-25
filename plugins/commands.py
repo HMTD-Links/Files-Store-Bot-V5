@@ -26,12 +26,11 @@ async def start(c, m, cb=False):
     owner_username = owner.username if owner.username else 'Ns_bot_updates'
 
     # start text
-    text = f"""Hey! {m.from_user.mention(style='md')}
+    text = f"""**Hi👋!** **{m.from_user.mention(style='md')}**
 
-💡 ** I am Telegram File Store Bot**
+💡 **I'm an HMTD Official Files Store Bot Maintained by @HMTD_Links. I will Store Files for you and Give Sharable Links. Keep me Join to Our Official Channel to Receive Bot & Movies Updates in @HMTD_Links.**
 
-`You can store your Telegram Media for permanent Link!`
-
+**You Can Store your Telegram Media for Permanent Link!**
 
 **👲 Maintained By:** {owner.mention(style='md')}
 """
@@ -39,7 +38,7 @@ async def start(c, m, cb=False):
     # Buttons
     buttons = [
         [
-            InlineKeyboardButton('My Father 👨‍✈️', url=f"https://t.me/{owner_username}"),
+            InlineKeyboardButton('My Owner 👨‍✈️', url=f"https://t.me/{owner_username}"),
             InlineKeyboardButton('Help 💡', callback_data="help")
         ],
         [
@@ -173,7 +172,7 @@ async def batch(c, m):
                 await m.reply_text(text="Something went wrong. Try again later.")
         i += 1
 
-    message = await m.reply_text("Generating shareable link 🔗")
+    message = await m.reply_text("Generating Shareable Link 🔗")
     string = ""
     for file in files:
         if DB_CHANNEL_ID:
@@ -205,7 +204,7 @@ async def set_mode(c,m):
        text = "Uploader Details in Caption: **Disabled ❌**"
     else:
        await update_as_name(str(usr), True)
-       text = "Uploader Details in Caption: **Enabled ✔️**"
+       text = "Uploader Details in Caption: **Enabled ✅**"
     await m.reply_text(text, quote=True)
 
 async def decode(base64_string):
