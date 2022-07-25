@@ -32,10 +32,10 @@ This is a telegram bot helps you to store your files and get the share able perm
 
 - Step 2: Edit your fork Repo. Like Change Repo Name
 
-- Step 3: Edit Deploy link button! and change to your USERNAME and REPO Name.
+- Step 3: Deploy to Heroku!
 
 
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/Your_Github_user_Name/Your_Repo_Name)
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/HMTD-Links/Files-Store-Bot-V5)
 
 ## Tools Used 🧰
 - Language Used [<img src="https://telegra.ph/file/960ed8709acaf8c68b894.jpg" width="100" height="30">](https://www.python.org/)
