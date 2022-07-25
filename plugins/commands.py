@@ -32,7 +32,7 @@ async def start(c, m, cb=False):
 
 **You Can Store your Telegram Media for Permanent Link!**
 
-**👲 Maintained By:** {owner.mention(style='md')}
+**👲 Maintained By:** **{owner.mention(style='md')}**
 """
 
     # Buttons
@@ -66,14 +66,14 @@ async def start(c, m, cb=False):
 
             if string.empty:
                 owner = await c.get_users(int(OWNER_ID))
-                return await m.reply_text(f"🥴 Sorry bro your file was deleted by file owner or bot owner\n\nFor more help contact my owner 👉 {owner.mention(style='md')}")
+                return await m.reply_text(f"**🥴 Sorry bro Your File was Deleted by File Owner or Bot Owner\n\nFor More Help Contact My Owner 👉 {owner.mention(style='md')}**")
             message_ids = (await decode(string.text)).split('-')
             for msg_id in message_ids:
                 msg = await c.get_messages(int(chat_id), int(msg_id)) if not DB_CHANNEL_ID else await c.get_messages(int(DB_CHANNEL_ID), int(msg_id))
 
                 if msg.empty:
                     owner = await c.get_users(int(OWNER_ID))
-                    return await m.reply_text(f"🥴 Sorry bro your file was deleted by file owner or bot owner\n\nFor more help contact my owner 👉 {owner.mention(style='md')}")
+                    return await m.reply_text(f"**🥴 Sorry bro Your File was Deleted by File Owner or Bot Owner\n\nFor More Help Contact My Owner 👉 {owner.mention(style='md')}**")
                 try:
                     await msg.copy(m.from_user.id, protect_content=PROTECT_CONTENT)
                     await asyncio.sleep(1)
@@ -88,7 +88,7 @@ async def start(c, m, cb=False):
         msg = await c.get_messages(int(chat_id), int(msg_id)) if not DB_CHANNEL_ID else await c.get_messages(int(DB_CHANNEL_ID), int(msg_id))
 
         if msg.empty:
-            return await send_msg.edit(f"🥴 Sorry bro your file was deleted by file owner or bot owner\n\nFor more help contact my owner 👉 {owner.mention(style='md')}")
+            return await send_msg.edit(f"**🥴 Sorry bro Your File was Deleted by File Owner or Bot Owner\n\nFor More Help Contact My Owner 👉 {owner.mention(style='md')}**")
         
         caption = f"{msg.caption.markdown}\n\n\n" if msg.caption else ""
         as_uploadername = (await get_data(str(chat_id))).up_name
@@ -128,7 +128,7 @@ async def me(c, m):
     """ This will be sent when /me command was used"""
 
     me = await c.get_users(m.from_user.id)
-    text = "--**YOUR DETAILS:**--\n\n\n"
+    text = "--**YOUR DETAILS:**--\n\n"
     text += f"__🦚 First Name:__ `{me.first_name}`\n\n"
     text += f"__🐧 Last Name:__ `{me.last_name}`\n\n" if me.last_name else ""
     text += f"__👁 User Name:__ @{me.username}\n\n" if me.username else ""
@@ -154,25 +154,25 @@ async def batch(c, m):
 
     while m.from_user.id in BATCH:
         if i == 1:
-            media = await c.ask(chat_id=m.from_user.id, text='Send me some files or videos or photos or text or audio. If you want to cancel the process send /cancel')
+            media = await c.ask(chat_id=m.from_user.id, text='**Send me Some Files or Videos or Photos or Texts or Audios. If you Want to cancel the Process Send /cancel**')
             if media.text == "/cancel":
-                return await m.reply_text('Cancelled Successfully ✌')
+                return await m.reply_text('**Cancelled Successfully ✌**')
             files.append(media)
         else:
             try:
                 reply_markup = InlineKeyboardMarkup([[InlineKeyboardButton('Done ✅', callback_data='done')]])
-                media = await c.ask(chat_id=m.from_user.id, text='Ok 😉. Now send me some more files Or press done to get shareable link. If you want to cancel the process send /cancel', reply_markup=reply_markup)
+                media = await c.ask(chat_id=m.from_user.id, text='**Ok 😉. Now send me Some More Files Or Press Done to get Shareable Link. If you Want to cancel the Process Send /cancel**', reply_markup=reply_markup)
                 if media.text == "/cancel":
-                    return await m.reply_text('Cancelled Successfully ✌')
+                    return await m.reply_text('**Cancelled Successfully ✌**')
                 files.append(media)
             except ListenerCanceled:
                 pass
             except Exception as e:
                 print(e)
-                await m.reply_text(text="Something went wrong. Try again later.")
+                await m.reply_text(text="**Something went wrong. Try again later.**")
         i += 1
 
-    message = await m.reply_text("Generating Shareable Link 🔗")
+    message = await m.reply_text("**Generating Shareable Link 🔗**")
     string = ""
     for file in files:
         if DB_CHANNEL_ID:
@@ -201,10 +201,10 @@ async def set_mode(c,m):
     caption_mode = (await get_data(usr)).up_name
     if caption_mode:
        await update_as_name(str(usr), False)
-       text = "Uploader Details in Caption: **Disabled ❌**"
+       text = "**Uploader Details in Caption :** **Disabled ❌**"
     else:
        await update_as_name(str(usr), True)
-       text = "Uploader Details in Caption: **Enabled ✅**"
+       text = "**Uploader Details in Caption :** **Enabled ✅**"
     await m.reply_text(text, quote=True)
 
 async def decode(base64_string):
