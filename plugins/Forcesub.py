@@ -23,16 +23,15 @@ async def forcesub(c, m):
                     chat_id, msg_id = decoded_data.split('_')
                     buttons.append([InlineKeyboardButton('🔄 Refresh', callback_data=f'refresh+{chat_id}+{msg_id}')])
             await m.reply_text(
-                f"**Hi👋!** **{m.from_user.mention(style='md')}**
-**You Need Join My Updates Channel in order to Use Me 😉\n\n**"
-                "**__Press the Following Button to join Now 👇__**",
+                f"Hi👋! {m.from_user.mention(style='md')}\nYou Need Join My Updates Channel in order to Use Me 😉\n\n"
+                "__Press the Following Button to join Now 👇__",
                 reply_markup=InlineKeyboardMarkup(buttons),
                 quote=True
             )
             return
         except Exception as e:
             print(e)
-            await m.reply_text(f"Something Wrong. Please try again later or contact {owner.mention(style='md')}", quote=True)
+            await m.reply_text(f"**Something Wrong. Please Try again later or Contact {owner.mention(style='md')}", quote=True)
             return
     await m.continue_propagation()
 
