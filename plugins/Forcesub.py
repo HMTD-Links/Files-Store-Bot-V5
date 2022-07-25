@@ -23,8 +23,9 @@ async def forcesub(c, m):
                     chat_id, msg_id = decoded_data.split('_')
                     buttons.append([InlineKeyboardButton('🔄 Refresh', callback_data=f'refresh+{chat_id}+{msg_id}')])
             await m.reply_text(
-                f"Hey {m.from_user.mention(style='md')} you need join My updates channel in order to use me 😉\n\n"
-                "__Press the Following Button to join Now 👇__",
+                f"**Hi👋!** **{m.from_user.mention(style='md')}**
+**You Need Join My Updates Channel in order to Use Me 😉\n\n**"
+                "**__Press the Following Button to join Now 👇__**",
                 reply_markup=InlineKeyboardMarkup(buttons),
                 quote=True
             )
@@ -49,17 +50,17 @@ async def refresh_cb(c, m):
                    pass
                return
         except UserNotParticipant:
-            await m.answer('You are not yet joined our channel. First join and then press refresh button 🤤', show_alert=True)
+            await m.answer('**You are Not Yet Joined Our Channel. First Join and Then Press Refresh Button 🤤**', show_alert=True)
             return
         except Exception as e:
             print(e)
-            await m.message.edit(f"Something Wrong. Please try again later or contact {owner.mention(style='md')}")
+            await m.message.edit(f"**Something Wrong. Please Try again later or Contact {owner.mention(style='md')}**")
             return
 
     cmd, chat_id, msg_id = m.data.split("+")
     msg = await c.get_messages(int(chat_id), int(msg_id)) if not DB_CHANNEL_ID else await c.get_messages(int(DB_CHANNEL_ID), int(msg_id))
     if msg.empty:
-        return await m.reply_text(f"🥴 Sorry bro your file was missing\n\nPlease contact my owner 👉 {owner.mention(style='md')}")
+        return await m.reply_text(f"**🥴 Sorry bro Your File was Missing\n\nPlease Contact My Owner 👉 {owner.mention(style='md')}**")
 
     caption = msg.caption.markdown
     as_uploadername = (await get_data(str(chat_id))).up_name
