@@ -18,16 +18,15 @@ async def help_cb(c, m):
     # help text
     help_text = """**You need Help?? 🧐**
 
-★ Just send me the files i will store file and give you share able link
+★ **Just Send me the Files I will Store File and give you Shareable Link.**
 
+**You Can Use me in Channel too 😉**
 
-**You can use me in channel too 😉**
+★ **Make me Admin in your Channel with Edit Permission. Thats Enough Now Continue Uploading Files in Channel I Will Edit all Posts and add shareable Link URL Buttons**
 
-★ Make me admin in your channel with edit permission. Thats enough now continue uploading files in channel i will edit all posts and add share able link url buttons
+**How to Enable Uploader Details in Caption**
 
-**How to enable uploader details in caption**
-
-★ Use /mode command to change and also you can use `/mode channel_id` to control caption for channel msg."""
+★ **Use /mode Command to Change and Also you Can Use `/mode channel_id` to Control Caption for Channel Message.**"""
 
     # creating buttons
     buttons = [
@@ -62,19 +61,19 @@ async def about_cb(c, m):
     # about text
     about_text = f"""--**My Details:**--
 
-🤖 𝐌𝐲 𝐍𝐚𝐦𝐞: {bot.mention(style='md')}
+🤖 𝐌𝐲 𝐍𝐚𝐦𝐞: **{bot.mention(style='md')}**
     
-📝 𝐋𝐚𝐧𝐠𝐮𝐚𝐠𝐞: [Python 3](https://www.python.org/)
+📝 𝐋𝐚𝐧𝐠𝐮𝐚𝐠𝐞: **[Python 3](https://www.python.org/)**
 
-🧰 𝐅𝐫𝐚𝐦𝐞𝐰𝐨𝐫𝐤: [Pyrogram](https://github.com/pyrogram/pyrogram)
+🧰 𝐅𝐫𝐚𝐦𝐞𝐰𝐨𝐫𝐤: **[Pyrogram](https://github.com/pyrogram/pyrogram)**
 
-👨‍💻 𝐃𝐞𝐯𝐞𝐥𝐨𝐩𝐞𝐫: {owner.mention(style='md')}
+👨‍💻 𝐃𝐞𝐯𝐞𝐥𝐨𝐩𝐞𝐫 : **{owner.mention(style='md')}**
 
-📢 𝐂𝐡𝐚𝐧𝐧𝐞𝐥: [NS BOT UPDATES](https://t.me/Ns_bot_updates)
+📢 𝐂𝐡𝐚𝐧𝐧𝐞𝐥 : **[HMTD Discussion Group](https://t.me/HMTD_Discussion_Group)**
 
-👥 𝐆𝐫𝐨𝐮𝐩: [Ns BOT SUPPORT](https://t.me/Ns_Bot_supporters)
+👥 𝐆𝐫𝐨𝐮𝐩 : **[HMTD Links](https://t.me/HMTD_Links)**
 
-🌐𝐒𝐨𝐮𝐫𝐜𝐞 𝐂𝐨𝐝𝐞: [Press Me 🥰](https://github.com/Ns-Bots/TG-File-Store)
+🌐𝐒𝐨𝐮𝐫𝐜𝐞 𝐂𝐨𝐝𝐞 : **[Press Me 🥰](https://bit.ly/3z0Vckn)**
 """
 
     # creating buttons
@@ -116,4 +115,4 @@ async def delete_cb(c, m):
     chat_id = m.from_user.id if not DB_CHANNEL_ID else int(DB_CHANNEL_ID)
     message = await c.get_messages(chat_id, int(msg_id))
     await message.delete()
-    await m.message.edit("Deleted files successfully 👨‍✈️")
+    await m.message.edit("Deleted Files Successfully 👨‍✈️")
