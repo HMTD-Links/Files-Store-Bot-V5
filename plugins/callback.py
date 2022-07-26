@@ -69,9 +69,9 @@ async def about_cb(c, m):
 
 👨‍💻 𝐃𝐞𝐯𝐞𝐥𝐨𝐩𝐞𝐫 : **{owner.mention(style='md')}**
 
-📢 𝐂𝐡𝐚𝐧𝐧𝐞𝐥 : **[HMTD Discussion Group](https://t.me/HMTD_Discussion_Group)**
+📢 𝐂𝐡𝐚𝐧𝐧𝐞𝐥 : **[HMTD Links](https://t.me/HMTD_Links)**
 
-👥 𝐆𝐫𝐨𝐮𝐩 : **[HMTD Links](https://t.me/HMTD_Links)**
+👥 𝐆𝐫𝐨𝐮𝐩 : **[HMTD Discussion Group](https://t.me/HMTD_Discussion_Group)**
 
 🌐𝐒𝐨𝐮𝐫𝐜𝐞 𝐂𝐨𝐝𝐞 : **[Press Me 🥰](https://bit.ly/3z0Vckn)**
 """
