@@ -59,7 +59,7 @@ async def about_cb(c, m):
     bot = await c.get_me()
 
     # about text
-    about_text = f"""--**My Details:**--
+    about_text = f"""--**My Details :**--
 
 🤖 𝐌𝐲 𝐍𝐚𝐦𝐞 : **{bot.mention(style='md')}**
     
@@ -115,4 +115,4 @@ async def delete_cb(c, m):
     chat_id = m.from_user.id if not DB_CHANNEL_ID else int(DB_CHANNEL_ID)
     message = await c.get_messages(chat_id, int(msg_id))
     await message.delete()
-    await m.message.edit("Deleted Files Successfully 👨‍✈️")
+    await m.message.edit("**Deleted Files Successfully 👨‍✈️**")
